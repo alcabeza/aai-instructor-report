@@ -4,6 +4,8 @@
 
 1. Sign in to the AAI portal and open your **Technical Instructor** page.
 2. Click **📊 My AAI report** at the bottom right (or the extension icon in the toolbar).
+
+   ![The button on the portal, data blurred](images/portal-button-blurred.png)
 3. Do not use the page while the button shows progress (*Reading sessions…*, *Reading certifications…*). The extension clicks through the tabs for 15 to 30 seconds, then returns to the tab you were on.
 4. The report opens in a new tab next to the portal.
 

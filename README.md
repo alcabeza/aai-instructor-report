@@ -8,6 +8,12 @@ The instructor opens their *Technical Instructor* page on the AAI portal and cli
 
 *Preview generated from fictional data (`tests/preview/sample-data.js`).*
 
+### On the portal
+
+The **📊 My AAI report** button is added at the bottom right of the portal's *Technical Instructor* page. Personal data is blurred.
+
+![The My AAI report button on the AAI portal, data blurred](docs/images/portal-button-blurred.png)
+
 ### In real use
 
 Version 1.0 (French interface) running in Chrome with real portal data, dark mode. Personal data is blurred.
