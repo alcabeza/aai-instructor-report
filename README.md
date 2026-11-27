@@ -97,4 +97,8 @@ To test against the real portal, load `extension/` with **Load unpacked**, then 
 - Learner counts and scores for the most recent sessions may not yet be in the portal.
 - The extension depends on the portal's current layout. If AWS changes it, the report still opens and names the tab it could not read (see [Maintenance](docs/maintenance.md)).
 
+## License
+
+[MIT](LICENSE) © 2026 Arnaud Alcabez. Bundled third-party code: see [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+
 This project is not affiliated with or endorsed by Amazon Web Services.
