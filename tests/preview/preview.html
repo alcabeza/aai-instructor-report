@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Preview harness: the real dashboard page fed with fictional data (sample-data.js). -->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AAI Instructor Report</title>
+<link rel="stylesheet" href="../../extension/dashboard.css">
+</head>
+<body>
+<div class="aai" id="app">
+  <div class="aai-toolbar">
+    <label class="aai-year">Year
+      <select id="year" aria-label="Year shown"></select>
+    </label>
+    <span class="aai-stamp" id="stamp"></span>
+    <span class="aai-spacer"></span>
+    <button type="button" id="btn-json" class="aai-btn">Export data (JSON)</button>
+    <button type="button" id="btn-print" class="aai-btn is-primary">Print / PDF</button>
+  </div>
+
+  <div id="empty" class="aai-card" hidden>
+    <h2>No report yet</h2>
+    <p>Open your <strong>Technical Instructor</strong> page on the AAI portal, then click the <strong>📊 My AAI report</strong> button at the bottom right.</p>
+  </div>
+
+  <div id="content" hidden>
+    <header class="aai-head">
+      <h1 id="name"></h1>
+      <p class="aai-role" id="role"></p>
+      <div class="aai-tags" id="tags"></div>
+      <p class="aai-lede" id="lede"></p>
+      <ul class="aai-warn" id="warnings" hidden></ul>
+    </header>
+
+    <p class="aai-section" id="kpi-title"></p>
+    <div class="aai-grid" id="kpis"></div>
+
+    <p class="aai-section">Activity and satisfaction</p>
+    <div class="aai-two">
+      <section class="aai-card">
+        <h2>Sessions per month</h2>
+        <p class="aai-sub">Sessions ended each month; hover a bar to see learners.</p>
+        <div class="aai-chart" id="chart-monthly"></div>
+      </section>
+      <section class="aai-card">
+        <h2>CSAT score per session</h2>
+        <p class="aai-sub">One dot per rated session, sized by learners. Green at or above the 4.75 threshold, orange to red below it.</p>
+        <div class="aai-chart" id="chart-dots"></div>
+      </section>
+    </div>
+
+    <div class="aai-two">
+      <section class="aai-card">
+        <h2 id="courses-title">Courses delivered</h2>
+        <p class="aai-sub">Sessions per course; bar colour shows the average CSAT of rated sessions.</p>
+        <div class="aai-chart" id="chart-courses"></div>
+      </section>
+      <section class="aai-card">
+        <h2>Year over year</h2>
+        <p class="aai-sub">Sessions per year (all known years); hover for learners and average CSAT.</p>
+        <div class="aai-chart" id="chart-years"></div>
+      </section>
+    </div>
+
+    <p class="aai-section">Skills and approvals</p>
+    <div class="aai-two">
+      <section class="aai-card">
+        <h2>AWS Certifications</h2>
+        <p class="aai-sub">Sorted by expiry date. Orange: expires within the next 6 months.</p>
+        <div class="aai-wrap">
+          <table class="aai-table">
+            <thead><tr><th>Certification</th><th>Expires</th><th class="aai-num">Days</th></tr></thead>
+            <tbody id="certs"></tbody>
+          </table>
+        </div>
+      </section>
+      <section class="aai-card">
+        <h2>AI learning path</h2>
+        <p class="aai-sub">AAI programme badges and their prerequisites.</p>
+        <div class="aai-badges" id="badges"></div>
+      </section>
+    </div>
+
+    <section class="aai-card">
+      <h2>Approved course catalogue</h2>
+      <p class="aai-sub" id="catalog-sub"></p>
+      <div class="aai-chart is-short" id="chart-split"></div>
+      <div class="aai-wrap">
+        <table class="aai-table">
+          <thead><tr><th>Approved, never delivered</th><th class="aai-num">Approved on</th></tr></thead>
+          <tbody id="never"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="aai-foot" id="foot"></p>
+  </div>
+</div>
+<script src="../../extension/d3.min.js"></script>
+<script src="sample-data.js"></script>
+<script src="../../extension/dashboard.js"></script>
+</body>
+</html>

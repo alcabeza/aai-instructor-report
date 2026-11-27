@@ -1,0 +1,28 @@
+#aai-bilan-btn {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 2147483000;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 999px;
+  background: #232f3e;
+  color: #fff;
+  font: 600 14px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  max-width: 360px;
+}
+#aai-bilan-btn:hover { background: #ff9900; color: #111; }
+#aai-bilan-btn[disabled] { cursor: progress; background: #37475a; color: #fff; }
+#aai-bilan-btn .aai-bilan-spin {
+  width: 14px; height: 14px; border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.35); border-top-color: #ff9900;
+  animation: aai-bilan-rot 0.8s linear infinite;
+}
+#aai-bilan-btn.is-error { background: #b42318; }
+@keyframes aai-bilan-rot { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { #aai-bilan-btn .aai-bilan-spin { animation: none; } }

@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "AAI Instructor Report",
+  "version": "1.1.0",
+  "description": "One click turns your AWS AAI portal instructor dashboard into a visual report.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://portal.aai.aws.training/*"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "Generate my AAI report",
+    "default_icon": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" }
+  },
+  "icons": { "16": "icons/icon16.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["https://portal.aai.aws.training/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
